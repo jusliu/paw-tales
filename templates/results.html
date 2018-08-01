@@ -1,0 +1,36 @@
+{% extends "templates/base.html" %}
+{% block maincontent %}
+<div class="container">
+    <div class="search-bar">
+        <form action="/results" method="POST">
+            <input type="text" name="query" placeholder="Search for your pet" required />
+            <input type="submit" value="Enter" />
+        </form>
+    </div>
+    <div class="search-query">"{{ query }}" in Dogs</div>
+    <div class="result">
+        <img src="/img/golden-retriever.jpg" />
+        Jakey Poo
+    </div>
+    <div class="result">
+        <img src="/img/golden-retriever.jpg" />
+        Bingo
+    </div>
+    <div class="result">
+        <img src="/img/golden-retriever.jpg" />
+        Puppy
+    </div>
+    <div class="result">
+        <img src="/img/golden-retriever.jpg" />
+        Fido
+    </div>
+    <div class="result">
+        <img src="/img/golden-retriever.jpg" />
+        Peanut Butter
+    </div>
+    <div class="result">
+        <img src="/img/golden-retriever.jpg" />
+        Fluffy
+    </div>
+</div>
+{% endblock %}

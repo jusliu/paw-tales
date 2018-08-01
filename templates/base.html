@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Paw Tales{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/css/fontawesome-all.css" />
+        <link rel="stylesheet" type="text/css" href="/css/icofont.css" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    </head>
+
+    <body>
+        <nav>
+            <a href="/">Home</a>
+            <a href="#">Adopt Pet</a>
+            <a href="#">List Pet</a>
+            <a href="#">Hi, Lauren</a>
+        </nav>
+
+        {% block maincontent %}
+        {% endblock maincontent %}
+
+        <script src="/js/jquery-3.3.1.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        {% block addscripts %}
+        {% endblock addscripts %}
+
+    </body>
+</html>

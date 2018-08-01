@@ -1,0 +1,14 @@
+{% extends "templates/base.html" %}
+{% block maincontent %}
+<div class="container">
+    <div class="search-bar">
+        <form action="/results" method="POST">
+            <input type="text" name="query" placeholder="Search for your pet" required />
+            <input type="submit" value="Enter" />
+        </form>
+    </div>
+    <div class="banner">
+        Banner or "Featured Story"
+    </div>
+</div>
+{% endblock %}
