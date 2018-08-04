@@ -128,6 +128,7 @@ class ResultsHandler(BaseHandler):
             for keyword in query.split():
                 if keyword in pet.keywords:
                     pets.append(pet)
+                    break
         params = {
             'query': query,
             'pets': pets,
@@ -168,6 +169,8 @@ class ListHandler(BaseHandler):
             description=description,
             image_url=image_url,
         )
+
+        self.redirect_to('home')
 
 
 class ListingHandler(BaseHandler):
