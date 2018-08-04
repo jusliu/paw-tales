@@ -1,0 +1,28 @@
+{% extends "templates/base.html" %}
+{% block maincontent %}
+<div class="container">
+    <div class="listing">
+        <div class="title">{{ pet.name }}</div>
+        <div class="subtitle">
+            By {{ owner.first_name }} {{ owner.last_name }}
+            <a href="mailto:{{ owner.email_address }}" target="_blank"><i class="icofont icofont-envelope"></i></a>
+        </div>
+        <div class="row pet-details">
+            <div class="col-md-4">
+                <img src="{{ pet.image_url }}" />
+                <a href="mailto:{{ owner.email_address }}" target="_blank" class="adopt">Adopt Me!</a>
+            </div>
+            <div class="col-md-8">
+                <p>
+                    <i class="icofont icofont-heart"></i> Once upon a time...<br />
+                    A dog named {{ pet.name }} was born on {{ pet.birth_date }}.<br />
+                    <i class="icofont icofont-home"></i> He lives in {{ pet.city }}.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

@@ -25,9 +25,10 @@
             text-decoration: none;            
         }
 
-        nav a:last-child {
+        nav a.right {
             float: right;
             padding-right: 2em;
+            padding-left: 0;
         }
 
 /* Container */
@@ -35,6 +36,52 @@
         padding-top: 60px;
         width: 90%;
         margin: 0 auto;
+    }
+
+/* Log In */
+    .login {
+        border: solid 1px black;
+        border-radius: 1em;
+        width: 400px;
+        padding: 2em;
+        margin: 5em auto;
+    }
+
+    .login h3 {
+        text-align: center;
+    }
+
+    .login .form-group {
+        margin: 1em 0 0 0;
+    }
+
+    .login label {
+        font-size: 0.7em;
+        font-weight: bold;
+        padding-left: 1px;
+        margin: 0;
+    }
+
+    .login input {
+        border: solid 1px #e6e6e6;
+        border-radius: 2px;
+        display: block;
+        padding-left: 0.25em;
+        width: 100%;
+    }
+
+    .login input[type="submit"] {
+        cursor: pointer;
+        border: solid 1px black;
+        border-radius: 6px;
+        background-color: black;
+        color: white;
+        height: 2.5em;
+        transition: 0.3s;
+    }
+
+    .login input[type="submit"]:hover {
+        opacity: 0.75;
     }
 
 /* Search Bar */
@@ -93,6 +140,7 @@
 
 /* Result */
     .result {
+        color: black;
         cursor: pointer;
         display: inline-block;
         font-size: 1.5em;
@@ -102,6 +150,8 @@
     }
 
     .result:hover {
+        color: black;
+        text-decoration: none;
         transform: scale(1.02);
         transition: all .2s ease-in-out;
     }
@@ -110,4 +160,146 @@
             border-radius: 10px;
             display: block;
             width: 100%;          
+        }
+
+/* List Your Pet */
+    .list {
+        border: solid 1px black;
+        border-radius: 1em;
+        width: 400px;
+        padding: 2em;
+        margin: 5em auto;
+    }
+
+    .list h2 {
+        text-align: center;
+    }
+
+    .list .form-group {
+        margin: 1em 0 0 0;
+    }
+
+    .list label {
+        font-size: 0.7em;
+        font-weight: bold;
+        padding-left: 1px;
+        margin: 0;
+    }
+
+    .list input, .list textarea {
+        border: solid 1px #e6e6e6;
+        border-radius: 2px;
+        display: block;
+        padding-left: 0.25em;
+        width: 100%;
+    }
+
+    .list input[type="file"] {
+        border: none;
+    }
+
+    .list input[type="file"]::-webkit-file-upload-button {
+        visibility: hidden;
+    }
+
+    .list input[type="file"]::before {
+        content: 'Upload File';
+        cursor: pointer;
+        border: solid 1px black;
+        border-radius: 6px;
+        background-color: black;
+        color: white;
+        transition: 0.3s;
+        padding: 0.25em 0.5em;
+    }
+
+    .list input[type="file"]:hover::before {
+        opacity: 0.75;
+    }
+
+    .list input[type="submit"] {
+        cursor: pointer;
+        border: solid 1px black;
+        border-radius: 6px;
+        background-color: black;
+        color: white;
+        height: 2.5em;
+        transition: 0.3s;
+    }
+
+    .list input[type="submit"]:hover {
+        opacity: 0.75;
+    }
+
+/* Listing */
+    .listing {
+        width: 800px;
+        margin: 3em auto;
+    }
+
+        .listing .title {
+            font-size: 4em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .listing .subtitle {
+            font-size: 1.5em;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .listing .subtitle i {
+            left: 3px;
+            position: relative;
+            top: 3px;
+        }
+
+        .listing .subtitle a {
+            color: black;
+            font-size: 1.5em;
+        }
+
+        .listing .subtitle a:hover {
+            text-decoration: none;
+        }
+
+    .pet-details {
+        border: solid 1px black;
+        border-radius: 1em;
+        margin-top: 2em;
+        padding: 2em;
+    }
+
+        .pet-details img {
+            margin-bottom: 1em;
+            width: 100%;
+        }
+
+        .pet-details .adopt {
+            border: solid 1px black;
+            border-radius: 6px;
+            background-color: black;
+            display: block;
+            font-size: 1.5em;
+            text-align: center;
+            width: 100%;
+            padding: 0.25em 0.5em;
+            transition: 0.3s;
+            cursor: pointer;
+            width: 100%;
+            color: white;
+        }
+
+        .pet-details .adopt:hover {
+            opacity: 0.75;
+            text-decoration: none;
+        }
+
+        .pet-details p {
+            font-size: 2em;
+            margin: 0;
+            text-transform: uppercase;
         }

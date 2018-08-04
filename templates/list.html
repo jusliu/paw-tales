@@ -1,0 +1,49 @@
+{% extends "templates/base.html" %}
+{% block maincontent %}
+<div class="container">
+    <div class="list">
+        <h2>New Pet Listing</h2>
+        <form action="/list" enctype="multipart/form-data" method="POST">
+            <div class="form-group">
+                <label for="name">Pet Name</label>
+                <input type="text" id="name" name="name" />
+            </div>
+            <div class="form-group">
+                <label for="breed">Breed</label>
+                <input type="text" id="breed" name="breed" />
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="birth">Birth Date</label>
+                        <input type="text" id="birth" name="birth" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="sex">Sex</label>
+                        <input type="text" id="sex" name="sex" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" />
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="keywords">Keywords (separate using commas)</label>
+                <textarea id="keywords" name="keywords"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="picture">Picture</label>
+                <input type="file" id="picture" name="picture" accept="image/png, image/jpg, image/jpeg" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Pet Listing">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

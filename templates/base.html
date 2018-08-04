@@ -12,9 +12,13 @@
     <body>
         <nav>
             <a href="/">Home</a>
-            <a href="#">Adopt Pet</a>
-            <a href="#">List Pet</a>
-            <a href="#">Hi, Lauren</a>
+            {% if user %}
+            <a href="/list">List Your Pet</a>
+            <a href="/logout" class="right">Log Out</a>
+            {% else %}
+            <a href="/signup" class="right">Sign Up</a>
+            <a href="/login" class="right">Log In</a>
+            {% endif %}
         </nav>
 
         {% block maincontent %}
