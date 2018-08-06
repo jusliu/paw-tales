@@ -1,12 +1,17 @@
 {% extends "templates/base.html" %}
 {% block maincontent %}
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
 <div class="container">
     <div class="row listing">
         <div class="col-md-6">
             <div class="title">{{ pet.name }}</div>
-            <div class="subtitle">
-                By {{ owner.first_name }} {{ owner.last_name }}
-                <a href="mailto:{{ owner.email_address }}" target="_blank"><i class="icofont">envelope</i></a>
+            <div class="subtitle d-inline">
+                <h5 class="font-weight-bold">By {{ owner.first_name }} {{ owner.last_name }}
+                <a href="mailto:{{ owner.email_address }}" target="_blank"><i class="far fa-envelope"></i></a>
+                <!--  --></h5>
             </div>
             <p>
                 "Once upon a time, there was a {{ pet.breed }} named {{ pet.name }} who was looking for a home..."
