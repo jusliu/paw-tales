@@ -1,17 +1,22 @@
 {% extends "templates/base.html" %}
 {% block maincontent %}
 <div class="container">
-    <div class="search-bar">
-        <form action="/results" method="POST">
-            <input type="text" name="query" placeholder="Search for your pet" required />
-            <input type="submit" value="Enter" />
-        </form>
-    </div>
-    <div class="search-query">"{{ query }}" in Dogs</div>
+    <table class="search-query">
+        <tr>
+            <td width="15%">Sort By <i class="icofont">rounded_down</i></td>
+            <td width="70%">Searching for "{{ query }}"</td>
+            <td width="15%"><i class="icofont">navigation_menu</i> Filter</td>
+        </tr>
+    </table>
     {% for pet in pets %}
     <a href="/listing/{{ pet.key.id() }}" class="result">
         <img src="{{ pet.image_url }}" />
-        {{ pet.name }}
+        <table>
+            <tr>
+                <td>{{ pet.name }}</td>
+                <td>{{ pet.breed }}</td>
+            </tr>
+        </table>
     </a>
     {% endfor %}
 </div>

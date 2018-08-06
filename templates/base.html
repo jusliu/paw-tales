@@ -10,15 +10,23 @@
     </head>
 
     <body>
-        <nav>
-            <a href="/">Home</a>
+        <nav {% if not home %}class="blue"{% endif %}>
+            <a href="/">{% if home %}<img src="/img/logo.png" />{% else %}<img src="/img/logo-blue.png" />{% endif %}</a>
             {% if user %}
-            <a href="/list">List Your Pet</a>
             <a href="/logout" class="right">Log Out</a>
+            <a href="/pets" class="right">My Pets</a>
             {% else %}
             <a href="/signup" class="right">Sign Up</a>
             <a href="/login" class="right">Log In</a>
             {% endif %}
+            <div class="nav-search-bar">
+                <form action="/results" method="POST">
+                    <div class="search-input">
+                        <i class="icofont">search_1</i>
+                        <input type="text" name="query" placeholder="Find your pet now!" value="{{ query }}" required />
+                    </div>
+                </form>
+            </div>
         </nav>
 
         {% block maincontent %}

@@ -48,7 +48,8 @@ class BaseHandler(webapp2.RequestHandler):
 
 class MainHandler(BaseHandler):
     def get(self):
-        self.render_template('templates/home.html')
+        params = { 'home': True }
+        self.render_template('templates/home.html', params)
 
 class LoginHandler(BaseHandler):
     def get(self):
@@ -120,6 +121,10 @@ class LogoutHandler(BaseHandler):
         self.auth.unset_session()
         self.redirect_to('home')
 
+class SearchHandler(BaseHandler):
+    def get(self):
+        self.render_template('templates/search.html')
+
 class ResultsHandler(BaseHandler):
     def post(self):
         query = self.request.get('query')
@@ -172,7 +177,6 @@ class ListHandler(BaseHandler):
 
         self.redirect_to('home')
 
-
 class ListingHandler(BaseHandler):
     def get(self, **kwargs):
         pet_id = kwargs['pet_id']
@@ -182,3 +186,24 @@ class ListingHandler(BaseHandler):
             'owner': pet.owner.get()
         }
         self.render_template('templates/listing.html', params)
+
+class PetsHandler(BaseHandler):
+    def get(self):
+        if not self.user_info:
+            self.redirect_to(('login'))
+            return
+        pets = Pet.query(Pet.owner == self.user.key).fetch()
+        params = {
+            'pets': pets,
+        }
+        self.render_template('templates/pets.html', params)
+
+class PetHandler(BaseHandler):
+    def get(self, **kwargs):
+        pet_id = kwargs['pet_id']
+        pet = Pet.get_by_id(long(pet_id))
+        params = {
+            'pet': pet,
+            'owner': pet.owner.get()
+        }
+        self.render_template('templates/pet.html', params)
