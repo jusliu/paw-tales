@@ -401,6 +401,30 @@
             text-align: center;
         }
 
+        .listing .subtitle .adopted {
+            background-color: green;
+            border: solid 1px green;
+            color: white;
+            cursor: pointer;
+            height: 2.65em;
+            margin: 0.5em auto;
+            padding: 0 0.5em;
+            transition: 0.3s;
+            width: 50%;
+        }
+
+        .listing .subtitle .adopted:hover {
+            opacity: 0.75;
+        }
+
+        .listing .subtitle .adopted i {
+            font-size: 2em;
+            left: -10px;
+            margin-right: -10px;
+            position: relative;
+            top: 6px;
+        }
+
         .listing .subtitle i {
             left: 3px;
             position: relative;

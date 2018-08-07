@@ -5,8 +5,10 @@
         <div class="col-md-6">
             <div class="title">{{ pet.name }}</div>
             <div class="subtitle">
-                By {{ owner.first_name }} {{ owner.last_name }}
-                <a href="mailto:{{ owner.email_address }}" target="_blank"><i class="far fa-envelope"></i></a>
+                <div class="adopted">
+                    <i class="icofont">check</i>
+                    Mark as Adopted
+                </div>
             </div>
             <p>
                 "Once upon a time, in the faraway land of {{ pet.city }}, there lived a {{ pet.breed }} named {{ pet.name }}..."
