@@ -363,6 +363,7 @@
     .list input[type="submit"] {
         cursor: pointer;
         border: solid 1px #10ACEF;
+        border-radius: 0px;
         background-color: #10ACEF;
         color: white;
         font-weight: bold;
@@ -395,7 +396,8 @@
 
         .listing .subtitle {
             color: #5E5F5F;
-            font-size: 1.5em;
+            font-size: 1.25em;
+            font-weight: bold;
             line-height: 0;
             text-align: center;
         }
@@ -427,6 +429,89 @@
             font-size: 1.5em;
             font-weight: bold;
             margin-top: 1em;
+        }
+
+    .update {
+        border: solid 1px #e6e6e6;
+        margin: 2em auto 4em auto;
+        padding: 2.5em 3em 1em 3em;
+    }
+
+        .update h2 {
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        .update label {
+            font-size: 0.9em;
+            font-weight: bold;
+            padding-left: 1px;
+            margin: 0;
+        }
+
+        .update input, .update textarea {
+            border: solid 1px #e6e6e6;
+            border-radius: 2px;
+            display: block;
+            padding-left: 0.25em;
+            margin: 0.25em 0 1.5em 0;
+            width: 100%;
+        }
+
+        .update input[type="submit"] {
+            cursor: pointer;
+            border: solid 1px #10ACEF;
+            background-color: #10ACEF;
+            color: white;
+            font-weight: bold;
+            height: 2.5em;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .update input[type="submit"]:hover {
+            opacity: 0.75;
+        }
+
+        .update input[type="file"] {
+            border: none;
+        }
+
+        .update input[type="file"]::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        .update input[type="file"]::before {
+            content: 'Upload File';
+            cursor: pointer;
+            border: solid 1px #10ACEF;
+            background-color: #10ACEF;
+            color: white;
+            left: -3px;
+            position: relative;
+            transition: 0.3s;
+            padding: 0.25em 0.5em;
+        }
+
+        .update input[type="file"]:hover::before {
+            opacity: 0.75;
+        }
+
+        .update input[type="submit"] {
+            cursor: pointer;
+            border: solid 1px #10ACEF;
+            border-radius: 0px;
+            background-color: #10ACEF;
+            color: white;
+            font-size: 1.25em;
+            font-weight: bold;
+            height: 2.5em;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .update input[type="submit"]:hover {
+            opacity: 0.75;
         }
 
 /* Pets */

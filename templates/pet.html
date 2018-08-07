@@ -8,10 +8,9 @@
     <div class="row listing">
         <div class="col-md-6">
             <div class="title">{{ pet.name }}</div>
-            <div class="subtitle d-inline">
-                <h5 class="font-weight-bold">By {{ owner.first_name }} {{ owner.last_name }}
+            <div class="subtitle">
+                By {{ owner.first_name }} {{ owner.last_name }}
                 <a href="mailto:{{ owner.email_address }}" target="_blank"><i class="far fa-envelope"></i></a>
-                <!--  --></h5>
             </div>
             <p>
                 "Once upon a time, there was a {{ pet.breed }} named {{ pet.name }} who was looking for a home..."
@@ -19,6 +18,21 @@
         </div>
         <div class="col-md-6">
             <img src="{{ pet.image_url }}" />
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="update col-md-10 offset-md-1">
+            <h2>The Story of {{ pet.name }} – New Chapter</h2>
+            <form>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required />
+                <label for="content">Content</label>
+                <textarea id="content" name="content" rows="6" required></textarea>
+                <label for="photo">Photo</label>
+                <input type="file" id="photo" name="photo" required />
+                <input type="submit" value="Publish New Chapter" />
+            </form>
         </div>
     </div>
 

@@ -14,8 +14,7 @@
         <nav {% if not home %}class="blue"{% endif %}>
             <a href="/">{% if home %}<img src="/img/logo.png" />{% else %}<img src="/img/logo-blue.png" />{% endif %}</a>
             {% if user %}
-            <!-- <a href="/logout" class="right">Log Out</a>  Currently no logout option-->
-            <a class="right"> Hi, {{ user.first_name }}</a>
+             <a href="/logout" class="right">Log Out</a>
             <a href="/pets" class="right">My Pets</a>
             {% else %}
             <a href="/signup" class="right">Sign Up</a>
