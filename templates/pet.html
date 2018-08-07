@@ -1,9 +1,5 @@
 {% extends "templates/base.html" %}
 {% block maincontent %}
-<head>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-</head>
-
 <div class="container">
     <div class="row listing">
         <div class="col-md-6">
@@ -20,11 +16,33 @@
             <img src="{{ pet.image_url }}" />
         </div>
     </div>
+    {% for chapter in pet.chapters %}
+    <hr />
+    <div class="row listing">
+        {% if loop.index % 2 == 1 %}
+        <div class="col-md-6">
+            <img src="{{ chapter.image_url }}" />
+        </div>
+        {% endif %}
+        <div class="col-md-6">
+            <h1 class="text-center">Chapter {{ loop.index }}: {{ chapter.title }}</h1>
+            <p>
+                {{ chapter.content }}
+            </p>
+        </div>
+        {% if loop.index % 2 == 0 %}
+        <div class="col-md-6">
+            <img src="{{ chapter.image_url }}" />
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
     <hr />
     <div class="row">
         <div class="update col-md-10 offset-md-1">
             <h2>The Story of {{ pet.name }} – New Chapter</h2>
-            <form>
+            <form action="/submit-chapter" method="POST">
+                <input type="hidden" name="pet_id" value="{{ pet.key.id() }}" />
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" required />
                 <label for="content">Content</label>

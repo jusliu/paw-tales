@@ -7,7 +7,6 @@
 /* Navigation Bar */
     nav {
         background-color: white;
-        border-bottom: solid 1px #e6e6e6;
         color: #10ACEF;
         height: 130px;
         position: fixed;
@@ -379,7 +378,7 @@
 /* Listing */
     .listing {
         width: 100%;
-        margin: 3em auto;
+        margin: 6em auto;
     }
 
         .listing .title {
@@ -430,6 +429,33 @@
             font-weight: bold;
             margin-top: 1em;
         }
+
+    .adopt-me a {
+        background-color: #10ACEF;
+        border: solid 1px #10ACEF;
+        border-radius: 10px;
+        color: white !important;
+        cursor: pointer;
+        display: block;
+        font-size: 4em;
+        font-weight: bold;
+        line-height: 2em;
+        height: 2em;
+        margin-top: 1em;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .adopt-me a:hover {
+        text-decoration: none;
+        opacity: 0.75;
+    }
+
+    .adopt-me p {
+        font-size: 1.5em;
+        margin: 0.5em 0 4em 0;
+        text-align: center;
+    }
 
     .update {
         border: solid 1px #e6e6e6;

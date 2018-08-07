@@ -6,14 +6,42 @@
             <div class="title">{{ pet.name }}</div>
             <div class="subtitle">
                 By {{ owner.first_name }} {{ owner.last_name }}
-                <a href="mailto:{{ owner.email_address }}" target="_blank"><i class="icofont">envelope</i></a>
+                <a href="mailto:{{ owner.email_address }}" target="_blank"><i class="far fa-envelope"></i></a>
             </div>
             <p>
-                "Once upon a time, there was a {{ pet.breed }} named {{ pet.name }} who was looking for a home..."
+                "Once upon a time, in the faraway land of {{ pet.city }}, there lived a {{ pet.breed }} named {{ pet.name }}..."
             </p>
         </div>
         <div class="col-md-6">
             <img src="{{ pet.image_url }}" />
+        </div>
+    </div>
+    {% for chapter in pet.chapters %}
+    <hr />
+    <div class="row listing">
+        {% if loop.index % 2 == 1 %}
+        <div class="col-md-6">
+            <img src="{{ chapter.image_url }}" />
+        </div>
+        {% endif %}
+        <div class="col-md-6">
+            <h1 class="text-center">Chapter {{ loop.index }}: {{ chapter.title }}</h1>
+            <p>
+                {{ chapter.content }}
+            </p>
+        </div>
+        {% if loop.index % 2 == 0 %}
+        <div class="col-md-6">
+            <img src="{{ chapter.image_url }}" />
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+    <hr />
+    <div class="row">
+        <div class="adopt-me col-md-6 offset-md-3">
+            <a href="mailto:{{ owner.email_address }}" target="_blank">Adopt me now,</a>
+            <p>& give my adoption story a happy ending!</p>
         </div>
     </div>
 

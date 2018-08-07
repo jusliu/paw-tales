@@ -4,7 +4,7 @@
     <head>
         <title>Paw Tales{% block title %}{% endblock title %}</title>
         <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="/css/fontawesome-all.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
         <link rel="stylesheet" type="text/css" href="/css/icofont.css" />
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
         <link rel="icon" href="/img/icon.png" />
@@ -24,7 +24,6 @@
                 <form action="/results" method="POST">
                     <div class="search-input">
                         <i class="icofont">search_1</i>
-                        <!-- do you want to make the shading for the query? -->
                         <input type="text" name="query" placeholder="Find your pet now!" value="{{ query }}" required />
                     </div>
                 </form>

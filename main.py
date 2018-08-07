@@ -1,6 +1,6 @@
 import webapp2
 from handlers import MainHandler, LoginHandler, SignupHandler, LogoutHandler, SearchHandler, ResultsHandler, \
-    ListHandler, ListingHandler, PetsHandler, PetHandler
+    ListHandler, ListingHandler, PetsHandler, PetHandler, SubmitChapterHandler
 
 config = {
 	'webapp2_extras.sessions': {
@@ -24,4 +24,5 @@ app = webapp2.WSGIApplication([
     webapp2.Route('/listing/<pet_id:.+>', ListingHandler, name='listing'),
 	webapp2.Route('/pets', PetsHandler, name='pets'),
     webapp2.Route('/pet/<pet_id:.+>', PetHandler, name='pet'),
+    webapp2.Route('/submit-chapter', SubmitChapterHandler, name='submit-chapter'),
 ], debug=True, config=config)

@@ -1,4 +1,4 @@
-from models import User, Pet
+from models import User, Chapter, Pet
 from webapp2_extras import auth, sessions
 
 import jinja2
@@ -151,17 +151,11 @@ class ListHandler(BaseHandler):
         birth_date = self.request.get('birth')
         city = self.request.get('city')
         description = self.request.get('description')
+        image_url = '/img/' + self.request.get('picture')
         keywords_str = self.request.get('keywords')
         keywords = list()
         for keyword in keywords_str.split(','):
             keywords.append(keyword.strip())
-
-        # TODO: FIGURE OUT WHERE TO UPLOAD PICTURE TO
-        # picture = self.request.POST.multi['picture']
-        # picture_data = picture.value
-        # image_url = ???
-
-        image_url = '/img/golden-retriever.jpg'
 
         Pet.create(
             owner=self.user.key,
@@ -207,3 +201,18 @@ class PetHandler(BaseHandler):
             'owner': pet.owner.get()
         }
         self.render_template('templates/pet.html', params)
+
+class SubmitChapterHandler(BaseHandler):
+    def post(self):
+        title = self.request.get('title')
+        content = self.request.get('content')
+        image_url = '/img/' + self.request.get('photo')
+        pet_id = self.request.get('pet_id')
+
+        chapter = Chapter.create(title=title, content=content, image_url=image_url)
+
+        pet = Pet.get_by_id(long(pet_id))
+        pet.chapters.append(chapter)
+        pet.put()
+
+        self.redirect('/pet/' + pet_id)

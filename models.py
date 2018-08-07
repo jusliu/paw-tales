@@ -21,6 +21,21 @@ class User(webapp2_extras.appengine.auth.models.User):
             return user, timestamp
         return None, None
 
+class Chapter(ndb.Model):
+    title = ndb.StringProperty()
+    content = ndb.StringProperty()
+    image_url = ndb.StringProperty()
+
+    @classmethod
+    def create(cls, title, content, image_url):
+        chapter = cls(
+            title=title,
+            content=content,
+            image_url=image_url,
+        )
+        chapter.put()
+        return chapter
+
 class Pet(ndb.Model):
     owner = ndb.KeyProperty(kind='User')
     breed = ndb.StringProperty()
@@ -31,6 +46,7 @@ class Pet(ndb.Model):
     city = ndb.StringProperty()
     description = ndb.StringProperty()
     image_url = ndb.StringProperty()
+    chapters = ndb.StructuredProperty(Chapter, repeated=True)
 
     @classmethod
     def create(cls, owner, breed, sex, keywords, name, birth_date, city, description, image_url):
