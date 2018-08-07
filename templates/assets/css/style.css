@@ -545,3 +545,11 @@
         margin-top: 3em;
         text-align: center;
     }
+
+        .pets h1 a {
+            color: #5E5F5F;
+        }
+
+        .pets h1 a:hover {
+            text-decoration: none;
+        }

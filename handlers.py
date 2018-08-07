@@ -130,6 +130,9 @@ class ResultsHandler(BaseHandler):
         query = self.request.get('query')
         pets = list()
         for pet in Pet.query().fetch():
+            if query in pet.keywords:
+                pets.append(pet)
+                continue
             for keyword in query.split():
                 if keyword in pet.keywords:
                     pets.append(pet)
@@ -151,7 +154,7 @@ class ListHandler(BaseHandler):
         birth_date = self.request.get('birth')
         city = self.request.get('city')
         description = self.request.get('description')
-        image_url = '/img/' + self.request.get('picture')
+        image_url = '/img/' + self.request.POST.multi['picture'].filename
         keywords_str = self.request.get('keywords')
         keywords = list()
         for keyword in keywords_str.split(','):
@@ -169,7 +172,7 @@ class ListHandler(BaseHandler):
             image_url=image_url,
         )
 
-        self.redirect_to('home')
+        self.redirect_to('pets')
 
 class ListingHandler(BaseHandler):
     def get(self, **kwargs):
@@ -206,7 +209,7 @@ class SubmitChapterHandler(BaseHandler):
     def post(self):
         title = self.request.get('title')
         content = self.request.get('content')
-        image_url = '/img/' + self.request.get('photo')
+        image_url = '/img/' + self.request.POST.multi['photo'].filename
         pet_id = self.request.get('pet_id')
 
         chapter = Chapter.create(title=title, content=content, image_url=image_url)

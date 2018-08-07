@@ -9,7 +9,7 @@
                 <a href="mailto:{{ owner.email_address }}" target="_blank"><i class="far fa-envelope"></i></a>
             </div>
             <p>
-                "Once upon a time, there was a {{ pet.breed }} named {{ pet.name }} who was looking for a home..."
+                "Once upon a time, in the faraway land of {{ pet.city }}, there lived a {{ pet.breed }} named {{ pet.name }}..."
             </p>
         </div>
         <div class="col-md-6">
@@ -41,7 +41,7 @@
     <div class="row">
         <div class="update col-md-10 offset-md-1">
             <h2>The Story of {{ pet.name }} – New Chapter</h2>
-            <form action="/submit-chapter" method="POST">
+            <form action="/submit-chapter" enctype="multipart/form-data" method="POST">
                 <input type="hidden" name="pet_id" value="{{ pet.key.id() }}" />
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" required />

@@ -2,7 +2,7 @@
 {% block maincontent %}
 <div class="container">
     <div class="pets">
-        <h1>Current Pet Listings</h1>
+        <h1>Current Pet Listings <a href="/list"><i class="icofont">plus_circle</i></a></h1>
         {% for pet in pets %}
         <a href="/pet/{{ pet.key.id() }}" class="result">
             <img src="{{ pet.image_url }}" />
